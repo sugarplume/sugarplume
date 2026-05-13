@@ -1,173 +1,159 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sugarplume Study Hub</title>  <!-- Aesthetic Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
-    :root {
-      --bg: #fff0f5;
-      --text: #2b2b2b;
-      --card: #ffffff;
-      --primary: #ff4d6d;
-      --secondary: #ff8fab;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aiza Planner</title>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      position: relative;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-    /* 🌸 soft floral background pattern */
-    body::before {
-      content: "🌸 🌼 🌸 🌼 🌸 🌼 🌸 🌼";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      font-size: 30px;
-      opacity: 0.06;
-      pointer-events: none;
-      white-space: pre-wrap;
-      line-height: 3em;
-      z-index: 0;
-    }
+<style>
+body{
+margin:0;
+font-family:Poppins;
+background: linear-gradient(135deg,#ffe6f0,#e6f0ff,#e6fff5,#fff7e6);
+color:#333;
+overflow-x:hidden;
+}
 
-    header {
-      background: linear-gradient(135deg, #ff4d6d, #ff8fab);
-      color: white;
-      padding: 45px 20px;
-      text-align: center;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-      position: relative;
-      z-index: 2;
-    }
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+background:rgba(255,255,255,0.5);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:10;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
-    }
+.logo{
+font-family:'Playfair Display';
+font-size:16px;
+color:#444;
+font-weight:600;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background: var(--card);
-      padding: 10px;
-      gap: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 3;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+nav a{
+margin:0 8px;
+text-decoration:none;
+font-size:12px;
+color:#555;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 20px;
-      transition: 0.2s;
-    }
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 15px 20px;
+}
 
-    nav a:hover {
-      background: var(--primary);
-      color: white;
-    }
+.hero h1{
+font-family:'Playfair Display';
+font-size:28px;
+margin-bottom:8px;
+}
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      position: relative;
-      z-index: 2;
-    }
+.hero p{
+font-size:13px;
+color:#666;
+max-width:500px;
+margin:auto;
+}
 
-    .card {
-      background: var(--card);
-      padding: 22px;
-      margin: 15px 0;
-      border-radius: 18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border-left: 5px solid var(--primary);
-    }
+/* BUTTON */
+.btn{
+margin-top:12px;
+padding:10px 18px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-size:13px;
+color:white;
+background:linear-gradient(90deg,#ffb6c1,#cdb4ff,#a0e7e5);
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 16px;
-      background: var(--primary);
-      color: white;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
+/* NOTION CONTAINER */
+.planner{
+width:92%;
+max-width:1000px;
+margin:30px auto;
+background:rgba(255,255,255,0.6);
+border-radius:18px;
+padding:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-    .btn:hover {
-      background: var(--secondary);
-    }
+.planner h2{
+text-align:center;
+font-family:'Playfair Display';
+font-size:20px;
+margin-bottom:10px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #111;
-      color: white;
-      margin-top: 40px;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-    }
+/* IFRAME */
+iframe{
+width:100%;
+height:600px;
+border:none;
+border-radius:12px;
+}
 
-    .quote {
-      font-style: italic;
-      color: #777;
-    }
-  </style></head><body><header>
-  <h1>Sugarplume Study Hub 🌼</h1>
-  <p>Your aesthetic place for study schedules, notes & motivation ☘️</p>
-</header><nav>
-  <a href="#home">Home</a>
-  <a href="#schedules">Plans</a>
-  <a href="#notes">Notes</a>
-  <a href="#motivation">Mood</a>
-  <a href="#about">Me</a>
-</nav><section id="home">
-  <h2>Welcome 🌼</h2>
-  <div class="card">
-    <p>A soft aesthetic study hub designed for peaceful, consistent learning ☘️</p>
-  </div>
-</section><section id="schedules">
-  <h2>Study Plans 📑</h2>  <div class="card">
-    <h3>Weekly Plan</h3>
-    <p>Balanced subjects with revision + breaks.</p>
-    <a class="btn" href="#">Download 📑</a>
-  </div>  <div class="card">
-    <h3>Exam Plan</h3>
-    <p>Fast revision schedule for exams.</p>
-    <a class="btn" href="#">Download 📑</a>
-  </div>
-</section><section id="notes">
-  <h2>Notes 📑</h2>
-  <div class="card">
-    <p>Your study notes will appear here 🌼</p>
-  </div>
-</section><section id="motivation">
-  <h2>Motivation 🌼</h2>  <div class="card">
-    <p class="quote">"Soft progress is still progress."</p>
-  </div>  <div class="card">
-    <p class="quote">"Be consistent, not perfect ☘️"</p>
-  </div>
-</section><section id="about">
-  <h2>About Me 🌼</h2>
-  <div class="card">
-    <p>Welcome to Sugarplume — your soft aesthetic study space ☘️</p>
-  </div>
-</section><footer>
-  <p>© 2026 Sugarplume Study Hub 🌼</p>
-</footer></body>
+/* FLOATING FLOWERS */
+.floating{
+position:absolute;
+font-size:18px;
+opacity:0.25;
+animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-40px);}
+100%{transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.hero h1{font-size:22px;}
+iframe{height:500px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating aesthetic elements -->
+<div class="floating" style="top:15%;left:5%;">🌸</div>
+<div class="floating" style="top:25%;right:10%;">🌼</div>
+<div class="floating" style="bottom:20%;left:10%;">🌷</div>
+<div class="floating" style="bottom:30%;right:15%;">🌸</div>
+
+<header>
+<div class="logo">Aiza Planner</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Planner</a>
+<a href="#">Tasks</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Your Aesthetic Notion Planner 🌷</h1>
+<p>Organize your goals, tasks, and dreams in one soft, calming space designed for productivity & aesthetics.</p>
+<button class="btn" onclick="document.getElementById('planner').scrollIntoView({behavior:'smooth'})">
+Open Planner
+</button>
+</section>
+
+<section class="planner" id="planner">
+<h2>🌸 Notion Dashboard</h2>
+
+<!-- 🔴 Replace this with your Notion link -->
+<iframe src="YOUR_NOTION_LINK_HERE"></iframe>
+
+</section>
+
+</body>
 </html>
